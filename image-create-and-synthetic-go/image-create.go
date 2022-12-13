@@ -4,9 +4,11 @@ import (
 	"bytes"
 	"fmt"
 	"image"
+	"image/color"
 	"image/png"
 	"io/ioutil"
 	"os"
+	"unicode/utf8"
 
 	"github.com/golang/freetype/truetype"
 	"golang.org/x/image/font"
@@ -27,8 +29,23 @@ func main() {
 		os.Exit(1)
 	}
 
+	var imageWidth int = 1280
+	var imageHeight int = 510
+	text := "うんこマンですよ\nお前うんこマン"
+	textLength := utf8.RuneCountInString(text)
+
+	var fontsize float64
+
+	if textLength <= 6 {
+		fontsize = 150
+	} else if textLength <= 10 {
+		fontsize = 100
+	} else if textLength <= 15 {
+		fontsize = 70
+	}
+	fontsize = 100
 	opt := truetype.Options{
-		Size:              90,
+		Size:              fontsize,
 		DPI:               0,
 		Hinting:           0,
 		GlyphCacheEntries: 0,
@@ -36,24 +53,19 @@ func main() {
 		SubPixelsY:        0,
 	}
 
-	imageWidth := 300
-	imageHeight := 300
-	textTopMargin := 90
-	text := "うんこ"
-
 	img := image.NewRGBA(image.Rect(0, 0, imageWidth, imageHeight))
 
 	face := truetype.NewFace(ft, &opt)
 
 	dr := &font.Drawer{
 		Dst:  img,
-		Src:  image.Black,
+		Src:  image.NewUniform(color.RGBA{52, 52, 52, 255}),
 		Face: face,
 		Dot:  fixed.Point26_6{},
 	}
 
 	dr.Dot.X = (fixed.I(imageWidth) - dr.MeasureString(text)) / 2
-	dr.Dot.Y = fixed.I(textTopMargin)
+	dr.Dot.Y = fixed.I(int(fontsize))
 
 	dr.DrawString(text)
 

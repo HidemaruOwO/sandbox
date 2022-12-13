@@ -11,7 +11,7 @@ import (
 
 func main() {
 
-	originImagePath := "./images/white_back.png"
+	originImagePath := "./images/ogp_back.png"
 	logoImagePath := "./images/char.png"
 	saveImagePath := "./synthetic.png"
 
@@ -34,7 +34,7 @@ func main() {
 	}
 
 	// 画像の左上のpixelの位置 w.h
-	startPointLogo := image.Point{0, 50}
+	startPointLogo := image.Point{0, 330}
 
 	logoRectangle := image.Rectangle{startPointLogo, startPointLogo.Add(logoImg.Bounds().Size())}
 	originRectangle := image.Rectangle{image.Point{0, 0}, originImg.Bounds().Size()}
