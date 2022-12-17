@@ -31,7 +31,7 @@ func main() {
 
 	var imageWidth int = 1280
 	var imageHeight int = 510
-	text := "うんこマンですよ\nお前うんこマン"
+	text := "GitHubにSSHで接続する方法"
 	textLength := utf8.RuneCountInString(text)
 
 	var fontsize float64
@@ -43,7 +43,6 @@ func main() {
 	} else if textLength <= 15 {
 		fontsize = 70
 	}
-	fontsize = 100
 	opt := truetype.Options{
 		Size:              fontsize,
 		DPI:               0,
