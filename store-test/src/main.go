@@ -2,7 +2,6 @@ package main
 
 import (
 	"log"
-	"time"
 
 	"github.com/tucnak/store"
 )
@@ -19,14 +18,10 @@ type Cat struct {
 
 type Hotel struct {
 	Name string
-	Cats []Cat `toml:"guests"`
-
-	Opens  *time.Time
-	Closes *time.Time
 }
 
 func main() {
-	var hotel Hotel
+	var hotel Hotel = Hotel{"hage"}
 
 	if err := store.Load("hotel.toml", &hotel); err != nil {
 		log.Println("failed to load the cat hotel:", err)
