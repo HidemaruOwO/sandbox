@@ -1,0 +1,11 @@
+{
+  "name": "nodejs-twitter-icon",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "chrome-aws-lambda": "^10.1.0",
+    "puppeteer-core": "^20.1.2",
+    "selenium-webdriver": "^4.9.1"
+  }
+}
