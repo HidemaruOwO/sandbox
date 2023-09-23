@@ -14,4 +14,4 @@ jobs:
         run: uname -r
 
       - name: sw vers
-        run: wmic OS get OSArchitecture /value 
+        run: sw_vers -productVersion
