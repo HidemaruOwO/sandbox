@@ -1,0 +1,17 @@
+name: Get OS Arch
+
+on:
+  push:
+    paths:
+      - ".github/workflows/windows-os-arch.yml"
+
+jobs:
+  test:
+    name: test
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Test
+        run: wmic OS get OSArchitecture /value 
