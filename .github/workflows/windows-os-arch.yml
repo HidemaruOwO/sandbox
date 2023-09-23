@@ -14,7 +14,7 @@ jobs:
         run: wmic OS get Version /value 
         
       - name: wmic os
-        run: wmic OS /value
+        run: wmic OS get Version
 
       - name: Test
         run: wmic OS get OSArchitecture /value 
