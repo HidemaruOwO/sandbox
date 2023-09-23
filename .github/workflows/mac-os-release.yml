@@ -1,0 +1,17 @@
+name: Get OS Arch
+
+on:
+  push:
+    paths:
+      - ".github/workflows/mac-os-release.yml"
+
+jobs:
+  test:
+    name: test
+    runs-on: macos-latest
+    steps:
+      - name: uname
+        run: uname -r
+
+      - name: sw vers
+        run: wmic OS get OSArchitecture /value 
