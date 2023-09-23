@@ -15,3 +15,7 @@ jobs:
 
       - name: sw vers
         run: sw_vers -productVersion
+
+      - name: product
+        run: sw_vers -productName
+        
