@@ -11,7 +11,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: ver
-        run: wmic OS
+        run: wmic OS get Version /value
 
       - name: Test
         run: wmic OS get OSArchitecture /value 
