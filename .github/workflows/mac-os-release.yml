@@ -1,4 +1,4 @@
-name: Get OS Arch
+name: Get OS Release mac
 
 on:
   push:
