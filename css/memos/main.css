@@ -1,0 +1,73 @@
+.memo-content-text h2 {
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  position: relative;
+  padding-left: 0.95em;
+  line-height: 1.4 !important;
+}
+
+.memo-content-text h2:before {
+  content: "#";
+  position: absolute;
+  font-size: 1em;
+  left: 0;
+  top: 0;
+  color: #c0c0c0;
+  font-weight: 900 !important;
+}
+
+.memo-content-text h3 {
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  padding-left: 0.5rem !important;
+  border-left: 4px solid #00bfff;
+}
+
+#header-name svg {
+  color: red !important;
+}
+
+.memo-content-text h4 {
+  font-size: 20px !important;
+  font-weight: 600;
+  position: relative;
+  padding: 0.5rem 0.9rem;
+  padding-bottom: 0.8rem;
+}
+
+.memo-content-text h4:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 6px;
+  background: -webkit-repeating-linear-gradient(
+    -45deg,
+    #6ad1c8,
+    #6ad1c8 2px,
+    #fff 2px,
+    #fff 4px
+  );
+  background: repeating-linear-gradient(
+    -45deg,
+    #6ad1c8,
+    #6ad1c8 2px,
+    #fff 2px,
+    #fff 4px
+  );
+}
+
+.memo-content-text h5 {
+  font-size: 18px !important;
+  font-weight: 600;
+  position: relative;
+}
+
+.tag-span {
+  background-color: rgb(37 99 235 / 0.15);
+  padding: 0 5px;
+  border-radius: 3px;
+  font-size: small;
+  line-height: 1.5;
+}
