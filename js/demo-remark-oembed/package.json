@@ -1,0 +1,10 @@
+{
+  "name": "demo-remark-oembed",
+  "module": "index.ts",
+  "dependencies": {
+    "@agentofuser/remark-oembed": "^1.0.4",
+    "fs": "^0.0.1-security",
+    "remark": "^15.0.1",
+    "typescript": "^5.3.2"
+  }
+}
