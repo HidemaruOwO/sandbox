@@ -1,0 +1,29 @@
+version: "3.8"
+
+networks:
+  default:
+
+services:
+  nginx:
+    image: nginx:stable-alpine
+    container_name: nginx
+    ports:
+      - 80:80
+    networks:
+      - default
+
+  ngrok:
+    image: ngrok/ngrok:alpine
+    ports:
+      - 4040:4040
+    environment:
+      NGROK_PROTOCOL: http
+      NGROK_PORT: nginx:80
+      #NGROK_AUTH: ${NGROK_AUTH}
+    depends_on:
+      - nginx
+    networks:
+      - default
+    command:
+      - "http"
+      - "80"
